@@ -1,4 +1,4 @@
-<img src="https://github.com/TasosTilsi/VESM/blob/master/resources/logo.png" width="200" height="200" /> <img src="https://github.com/TasosTilsi/VESM/blob/master/resources/teiser_logo.png" width="200" height="200"/>
+<img src="https://github.com/TasosTilsi/VESM/blob/master/resources/logo.png" width="400" height="200" /> <img src="https://github.com/TasosTilsi/VESM/blob/master/resources/teiser_logo.png" width="200" height="200"/>
 <br/>
 <h1>VESM Desktop Application</h1>
 <h3>Title</h3>
@@ -17,7 +17,7 @@ $ npm i -S electron
 $ npm i -S bootstrap
 $ npm i -S jquery
 $ npm i -S popper.js
-$ npm install --save-dev electron-rebuild
+$ npm install --save-dev electron-builder
 ```
 
 After doing the above you are for run.

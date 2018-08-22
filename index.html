@@ -93,6 +93,9 @@
                                 console.log('url', theUrl);
 
                                 win.loadURL(theUrl);
+                                win.on("closed",()=>{
+                                    win = null;
+                                });
                             })
                         </script>
                     </li>

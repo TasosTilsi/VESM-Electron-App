@@ -7,6 +7,7 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
     "build": "build --win --ia32",
     "ship": "build --win --ia32 -p always"
   },
@@ -21,10 +22,9 @@
   "author": "TasosTilsi",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^2.0.7",
+    "electron": "^2.0.8",
     "electron-builder": "^20.28.2",
-    "electron-packager": "^12.1.1",
-    "electron-rebuild": "^1.8.2"
+    "electron-packager": "^12.1.1"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
@@ -36,6 +36,31 @@
     "appId": "tasostilsi.vesm.electron.app",
     "mac": {
       "category": "public.app-category.education"
+    },
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
     },
     "publish": [
       {
