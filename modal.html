@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="stylesheets/Modal.css">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous"> -->
+<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+<script>
+    const shell = require('electron').shell
+
+    const links = document.querySelectorAll('a[href]')
+
+    Array.prototype.forEach.call(links, (link) => {
+        const url = link.getAttribute('href')
+        if (url.indexOf('http') === 0) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                shell.openExternal(url)
+            })
+        }
+    })
+</script>
+
+<script>
+    const appVersion = require('./package.json').version;
+    const {
+        ipcRenderer
+    } = require('electron');
+
+    ipcRenderer.send('asynchronous-message', 'giveVersion')
+    ipcRenderer.on('asynchronous-reply', (event, arg) => {
+        //console.log(arg);
+        document.getElementById('version').innerHTML = arg;
+    })
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" align="center">
+                <p>
+                    <img src="resources/teiser_logo.png" />
+                </p>
+            </div>
+            <div class="modal-body" align="center">
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fas fa-graduation-cap" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>Development of an application for the Implementation and use of search methods in a visualized
+                                environment
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="far fa-user" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>Supervisor Professor:
+                                <a href="http://teachers.teicm.gr/outsios/index.html">Evangelos Outsios
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-user-graduate" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>Student: Anastasios Tilsizoglou</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-id-card" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>AEM: 3878</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-link" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <a href="https://git.io/vAM41">Github Repository</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="far fa-copyright" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>
+                                <a href="https://git.io/vAM4F">MIT License</a>
+                                <br/>Copyright &copy;
+                                <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-globe" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>
+                                Check The Online Version
+                                <a href="https://git.io/fNltq">Here</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-code-branch" style="font-size:50px"></i>
+                        </td>
+                        <td>
+                            <p>
+                                Version:
+                                <span id="version"> </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-user-circle" style="font-size:50px"></i>
+                        </td>
+                        <td align="center" style="padding: 7px 0 2px; ">
+                            <p align="center">
+                                <table cellpadding="0" cellspacing="0" border="0" style="font-family: sans-serif; line-height: 13px; width: auto; border-collapse: collapse; color: #333;">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://www.linkedin.com/in/tasostilsi">
+                                                        <i class="fab fa-linkedin" style="font-size: 30px; color: #00008b"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://facebook.com/tasostilsi">
+                                                        <i class="fab fa-facebook-square" style="font-size: 30px; color: #0000ff"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://twitter.com/tasostilsi">
+                                                        <i class="fab fa-twitter-square" style="font-size: 30px; color: #20b2aa"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://instagram.com/tasostilsi">
+                                                        <i class="fab fa-instagram" style="font-size: 30px; color: #8b008b"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://github.com/tasostilsi">
+                                                        <i class="fab fa-github-square" style="font-size: 30px; color: #000000"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                            <td valign="top" width="24" style="padding-right: 4px;">
+                                                <p style="margin: 0.75pt;">
+                                                    <a href="http://twitch.tv/tasostilsi">
+                                                        <i class="fab fa-twitch" style="font-size: 30px; color: #800080"></i>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+.container img {
+    margin-bottom: 5px;
+}
+
+.navbar>.container{
+    flex-wrap: nowrap;
+}
+
+.body_container {
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+}
+
+.AlgorithmControlSection {
+    position: fixed;
+    display: grid;
+    top: 3.8rem;
+    min-width: 100%;
+    z-index: 100;
+}
+
+#table_container {
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+}
+
+#inputs,
+#searchButtons,
+#stepButtons {
+    min-width: 100%;
+    background-color: #ffffff;
+}
+
+#stepButtons {
+    min-width: 83%;
+}
+
+#options i {
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.container {
+    min-width: 100%;
+}
+
+.container-fluid {
+    padding: 15px;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 0rem;
+}
+
+.form-control {
+    border-radius: 0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row {
+    width: 100%;
+}
+
+.col-sm {
+    margin: 1px;
+    text-align: center;
+    padding: 0;
+    border: 2px solid transparent;
+}
+
+.with-number {
+    margin: 1px;
+    padding: 0;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.index {
+    color: darkgreen;
+}
+
+.value {
+    color: darkred;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid darkcyan;
+}
+
+p.col-sm {
+    text-align: center;
+}
+
+body {
+    position: absolute;
+    margin: 0;
+    padding-bottom: 0.1rem;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .container a{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #generateNumbers{
+        min-width: 80%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .container a{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .btn{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #generateNumbers{
+        min-width: 80%;
+    }
+}

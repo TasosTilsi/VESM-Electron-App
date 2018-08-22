@@ -1,0 +1,46 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.modal-header {
+    background-color: green;
+    padding: 20px;
+}
+
+.modal-header img {
+    box-align: center;
+    vertical-align: center;
+}
+
+.modal-header p{
+    align-items: center;
+    text-align: center;
+}
+
+.modal-body td {
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+}
+
+.modal-body p {
+    margin: 4%;
+}
+
+.modal-body img {
+    width: 50px;
+    height: 50px;
+}
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .modal-header img {
+        display: block;
+        margin-left: 23%;
+    }
+}
