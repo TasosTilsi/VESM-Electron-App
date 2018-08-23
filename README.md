@@ -6,14 +6,15 @@
 <p> Development of an application for the Implemantation and use of search methods in a visualized environment</p>
 
 <h3>ToDo's</h3>
- 
-1. Some minor fixes 
-2. Auto Update 
-3. Publish releases for Linux and Mac OS 
-4. Make a minimal menu for the app 
-5. Materialize the view 
-6. Anything that comes to my mind 
-7. Feel Free to open an issue to post your thoughts
+
+ 1. [ ] Some minor fixes  
+ 2. [x] Open links externally in the default browser  
+ 3. [x] Auto Update  
+ 4. [ ] Publish releases for Linux and Mac OS  
+ 5. [ ] Make a minimal menu for the app 
+ 6. [ ] Materialize the view 
+ 7. [ ] Anything that comes to my mind 
+ 8. [ ] Feel Free to open an issue to post your thoughts
 
 <h3>Download the App in Development Mode</h3>
 You will have to install NodeJs first for the npm package manager.
@@ -26,6 +27,8 @@ $ npm install
 ```
 Not Every time necessary but sometimes useful
 ```shell
+$ npm i electron-log
+$ npm i electron-updater
 $ npm i -S @fortawesome/fontawesome-free
 $ npm i -S electron
 $ npm i -S bootstrap

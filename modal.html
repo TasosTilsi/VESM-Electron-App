@@ -4,19 +4,14 @@
 <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
 
 <script>
-    const shell = require('electron').shell
-
-    const links = document.querySelectorAll('a[href]')
-
-    Array.prototype.forEach.call(links, (link) => {
-        const url = link.getAttribute('href')
-        if (url.indexOf('http') === 0) {
-            link.addEventListener('click', (e) => {
-                e.preventDefault()
-                shell.openExternal(url)
-            })
-        }
-    })
+    // Open all links in external browser
+let shell = require('electron').shell
+document.addEventListener('click', function (event) {
+  if (event.target.tagName === 'A' && event.target.href.startsWith('http')) {
+    event.preventDefault()
+    shell.openExternal(event.target.href)
+  }
+})
 </script>
 
 <script>
@@ -85,7 +80,7 @@
                             <i class="fas fa-link" style="font-size:50px"></i>
                         </td>
                         <td>
-                            <a href="https://git.io/vAM41">Github Repository</a>
+                            <a href="https://git.io/fALxo">Github Repository</a>
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +89,7 @@
                         </td>
                         <td>
                             <p>
-                                <a href="https://git.io/vAM4F">MIT License</a>
+                                <a href="https://git.io/fALx1">MIT License</a>
                                 <br/>Copyright &copy;
                                 <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
                             </p>
