@@ -5,13 +5,28 @@
 <b>V</b>isualized <b>E</b>nvironment for <b>S</b>earch <b>M</b>ethods
 <p> Development of an application for the Implemantation and use of search methods in a visualized environment</p>
 
+<h3>ToDo's</h3>
+```
+1. Some minor fixes
+2. Auto Update
+3. Publish releases for Linux and Mac OS
+4. Make a minimal menu for the app
+5. Materialize the view
+6. Anything that comes to my mind
+7. Feel Free to open an issue to post your thoughts
+```
+
 <h3>Download the App in Development Mode</h3>
 You will have to install NodeJs first for the npm package manager.
 
 Download the repo or clone it and then install this packages via npm.
 
-```bash
+```shell
 $ git clone https://github.com/TasosTilsi/VESM-Electron-App.git
+$ npm install
+```
+Not Every time necessary but sometimes useful
+```shell
 $ npm i -S @fortawesome/fontawesome-free
 $ npm i -S electron
 $ npm i -S bootstrap
@@ -22,12 +37,12 @@ $ npm install --save-dev electron-builder
 
 After doing the above you are for run.
 
-````bash
+````shell
 $ npm start
 ````
 
-<!-- <h3>Download the app</h3>
-Click <a href="https://git.io/fNltq">here</a> to check this web app live! -->
+<h3>Download the app</h3>
+Click <a href="https://git.io/fAIY1">here</a> to download and install the desktop app!
 
 <h3>Description</h3>
 This is an Web Page developed for my thesis!
