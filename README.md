@@ -6,15 +6,14 @@
 <p> Development of an application for the Implemantation and use of search methods in a visualized environment</p>
 
 <h3>ToDo's</h3>
-```
-1. Some minor fixes
-2. Auto Update
-3. Publish releases for Linux and Mac OS
-4. Make a minimal menu for the app
-5. Materialize the view
-6. Anything that comes to my mind
+ 
+1. Some minor fixes 
+2. Auto Update 
+3. Publish releases for Linux and Mac OS 
+4. Make a minimal menu for the app 
+5. Materialize the view 
+6. Anything that comes to my mind 
 7. Feel Free to open an issue to post your thoughts
-```
 
 <h3>Download the App in Development Mode</h3>
 You will have to install NodeJs first for the npm package manager.
