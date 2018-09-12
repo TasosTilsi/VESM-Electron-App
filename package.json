@@ -1,15 +1,14 @@
 {
   "name": "vesm",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "build",
     "postinstall": "electron-builder install-app-deps",
-    "build": "build --win --ia32",
-    "ship": "build --win --ia32 -p always"
+    "build": "build --win --ia32 --linux",
+    "buildMac": "build --mac",
+    "ship": "build --win --ia32 --linux -p always"
   },
   "repository": "https://github.com/TasosTilsi/VESM-Electron-App",
   "keywords": [
@@ -20,6 +19,7 @@
     "methods"
   ],
   "author": "TasosTilsi",
+  "email": "tasostilsi@hotmail.com",
   "license": "MIT",
   "devDependencies": {
     "electron": "^2.0.8",
@@ -56,9 +56,9 @@
     },
     "linux": {
       "target": [
-        "AppImage",
         "deb"
-      ]
+      ],
+      "maintainer": "tasostilsi"
     },
     "win": {
       "target": "nsis",

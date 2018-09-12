@@ -18,6 +18,10 @@ body {
     text-align: center;
 }
 
+.modal-body {
+    background-color: white;
+}
+
 .modal-body td {
     text-align: center;
     margin: 2%;
