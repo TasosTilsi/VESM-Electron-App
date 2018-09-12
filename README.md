@@ -7,10 +7,10 @@
 
 <h3>ToDo's</h3>
 
- 1. [ ] Some minor fixes  
- 2. [x] Open links externally in the default browser  
- 3. [x] Auto Update  
- 4. [ ] Publish releases for Linux and Mac OS  
+ 1. [x] ~~Some minor fixes~~  
+ 2. [x] ~~Open links externally in the default browser~~  
+ 3. [x] ~~Auto Update~~  
+ 4. [ ] Publish releases for ~~Linux~~ and Mac OS  
  5. [ ] Make a minimal menu for the app 
  6. [ ] Materialize the view 
  7. [ ] Anything that comes to my mind 
