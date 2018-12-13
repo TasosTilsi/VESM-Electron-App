@@ -5,13 +5,13 @@
 
 <script>
     // Open all links in external browser
-let shell = require('electron').shell
-document.addEventListener('click', function (event) {
-  if (event.target.tagName === 'A' && event.target.href.startsWith('http')) {
-    event.preventDefault()
-    shell.openExternal(event.target.href)
-  }
-})
+    let shell = require('electron').shell
+    document.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A' && event.target.href.startsWith('http')) {
+            event.preventDefault()
+            shell.openExternal(event.target.href)
+        }
+    })
 </script>
 
 <script>
@@ -43,7 +43,8 @@ document.addEventListener('click', function (event) {
                             <i class="fas fa-graduation-cap" style="font-size:50px"></i>
                         </td>
                         <td>
-                            <p>Development of an application for the Implementation and use of search methods in a visualized
+                            <p>Development of an application for the Implementation and use of search methods in a
+                                visualized
                                 environment
                             </p>
                         </td>
@@ -90,7 +91,7 @@ document.addEventListener('click', function (event) {
                         <td>
                             <p>
                                 <a href="https://git.io/fALx1">MIT License</a>
-                                <br/>Copyright &copy;
+                                <br />Copyright &copy;
                                 <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
                             </p>
                         </td>
@@ -122,7 +123,7 @@ document.addEventListener('click', function (event) {
                             <i class="fas fa-user-circle" style="font-size:50px"></i>
                         </td>
                         <td align="center" style="padding: 7px 0 2px; ">
-                            <p align="center">
+                            <div align="center">
                                 <table cellpadding="0" cellspacing="0" border="0" style="font-family: sans-serif; line-height: 13px; width: auto; border-collapse: collapse; color: #333;">
                                     <tbody>
                                         <tr>
@@ -171,7 +172,7 @@ document.addEventListener('click', function (event) {
                                         </tr>
                                     </tbody>
                                 </table>
-                            </p>
+                            </div>
                         </td>
                     </tr>
                 </table>

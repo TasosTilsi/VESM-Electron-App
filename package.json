@@ -1,14 +1,15 @@
 {
   "name": "vesm",
-  "version": "1.2.0",
-  "description": "A minimal Electron application",
+  "version": "1.2.2",
+  "description": "Visualized Environment for Search Methods",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "postinstall": "electron-builder install-app-deps",
-    "build": "build --win --ia32 --linux",
+    "build": "build --win --ia32",
+    "buildLin": "build --linux",
     "buildMac": "build --mac",
-    "ship": "build --win --ia32 --linux -p always"
+    "ship": "build --win --ia32 -p always"
   },
   "repository": "https://github.com/TasosTilsi/VESM-Electron-App",
   "keywords": [

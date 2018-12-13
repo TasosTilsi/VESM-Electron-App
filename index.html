@@ -47,17 +47,20 @@
     <link rel="stylesheet" href="stylesheets/SnackBar.css">
     <link rel="stylesheet" href="stylesheets/Slider.css">
     <link rel="stylesheet" href="stylesheets/DragableContainer.css">
+    <link rel="stylesheet" href="stylesheets/Toggle.css">
+    <!-- <link rel="stylesheet" href="stylesheets/DarkTheme.css"> -->
+
 </head>
 
 <body class="MainPageStyling">
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="resources/logo1.png" style="width: 30px; height: 30px;" /> Visualized Environment for Search Methods</a>
-            <button id="navBar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="resources/logo1.png" style="width: 30px; height: 30px;" /> Visualized Environment for Search
+                Methods</a>
+            <button id="navBar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -107,154 +110,175 @@
 
     <!-- Page Content -->
     <div class="body_container">
+        <div id="whole_body_div" class="light-mode">
 
-        <div class="AlgorithmControlSection">
-            <div id="inputs" class="input-group" role="group">
-                <input class="form-control" min="0" max="9999" id="arraySize" type="number" placeholder="Specify Array Size (Default: 100)"
-                />
-                <input class="form-control" min="0" max="9999" id="numbersRange" type="number" placeholder="Specify Numbers Range (Default: 300)"
-                />
-                <div class="btn-group">
-                    <button type="button" id="generateNumbers" class="btn btn-info">Generate Numbers</button>
-                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
+            <div class="AlgorithmControlSection">
+                <div id="inputs" class="input-group" role="group">
+                    <input class="form-control" min="0" max="9999" id="arraySize" type="number" placeholder="Specify Array Size (Default: 100)" />
+                    <input class="form-control" min="0" max="9999" id="numbersRange" type="number" placeholder="Specify Numbers Range (Default: 300)" />
+                    <div class="btn-group">
+                        <button type="button" id="generateNumbers" class="btn btn-info">Generate Numbers</button>
+                        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="button" id="exponential">Exponential Distribution</button>
+                            <button class="dropdown-item" type="button" id="logarithmic">Logarithmic Distribution</button>
+                            <button class="dropdown-item" type="button" id="geometric">Geometric Distribution</button>
+                        </div>
+                    </div>
+                    <input class="form-control" min="0" max="9999" id="searchingNumber" type="number" placeholder="Specify Searching Number" />
+                </div>
+
+                <div id="searchButtons" class="btn-group" role="group">
+                    <button id="linearSearch" type="button" class="btn btn-secondary">Linear Search</button>
+                    <button id="binarySearch" type="button" class="btn btn-secondary">Binary Search</button>
+                    <button id="jumpSearch" type="button" class="btn btn-secondary">Jump Search</button>
+                    <button id="interpolationSearch" type="button" class="btn btn-secondary">Interpolation Search</button>
+                    <button id="exponentialSearch" type="button" class="btn btn-secondary">Exponential Search</button>
+                    <button id="fibonacciSearch" type="button" class="btn btn-secondary">Fibonacci Search</button>
+                </div>
+
+                <div id="stepButtons" class="btn-group" role="group">
+                    <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
+                    <div class="btn-group" role="group">
+                        <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">settings</i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <div class="col-sm">
+                                Dark Mode
+                                <button type="button" class="btn btn-toggle" data-toggle="button" title="Toggle Dark Theme"
+                                    id="dark_theme" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                <button class="btn btn-outline-secondary" title="Clear the cells and start over" type="button"
+                                    id="clear_button">
+                                    Clear
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                Help Container
+                                <button type="button" class="btn btn-toggle" title="Toggle Help Container" id="show_hide_manual"
+                                    data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                            <div class="col-sm">
+                                Steps Container
+                                <button type="button" class="btn btn-toggle" title="Toggle Steps Container" id="show_hide_step"
+                                    data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary"
+                        disabled>Pause
                     </button>
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" type="button" id="exponential">Exponential Distribution</button>
-                        <button class="dropdown-item" type="button" id="logarithmic">Logarithmic Distribution</button>
-                        <button class="dropdown-item" type="button" id="geometric">Geometric Distribution</button>
+                    <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
+                        Step
+                    </button>
+                    <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary"
+                        disabled>Skip Forward
+                    </button>
+                    <div id="slider">
+                        <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50"
+                            title="Animation Speed" />
+                        <span class="highlight"></span>
+                        <output id="rangevalue">1000</output>
                     </div>
                 </div>
-                <input class="form-control" min="0" max="9999" id="searchingNumber" type="number" placeholder="Specify Searching Number"
-                />
             </div>
 
-            <div id="searchButtons" class="btn-group" role="group">
-                <button id="linearSearch" type="button" class="btn btn-secondary">Linear Search</button>
-                <button id="binarySearch" type="button" class="btn btn-secondary">Binary Search</button>
-                <button id="jumpSearch" type="button" class="btn btn-secondary">Jump Search</button>
-                <button id="interpolationSearch" type="button" class="btn btn-secondary">Interpolation Search</button>
-                <button id="exponentialSearch" type="button" class="btn btn-secondary">Exponential Search</button>
-                <button id="fibonacciSearch" type="button" class="btn btn-secondary">Fibonacci Search</button>
-                <!--<button id="stratosSearch" type="button" class="btn btn-secondary">Stratos Search</button>-->
+            <div id="table_container" class="container-fluid" align="center">
+                <!--This container handled in javascript-->
             </div>
 
-            <div id="stepButtons" class="btn-group" role="group">
-                <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
-                <div class="btn-group" role="group">
-                    <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">settings</i>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <button class="dropdown-item" title="Clear the cells and start over" type="button" id="clear_button">
-                            Clear
-                        </button>
-                        <button class="dropdown-item" title="Show/Hide Help" type="button" id="show_hide_manual">Show/Hide Help
-                        </button>
-                        <button class="dropdown-item" title="Show/Hide Steps" type="button" id="show_hide_step">Show/Hide Steps
-                        </button>
+            <!--Draggable DIV:-->
+            <div class="dragable_container" id="dragable_container_manual" title="Click and Drag">
+                <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+                <div class="dragable_container_header" id="dragable_container_manual_header">
+                    <div id="collapse_manual" class="float-left">
+                        <i id="collapse_manual_icon" class="material-icons">expand_more</i>
+                    </div>
+                    <div id="collapse_manual_right" class="float-left" hidden>
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                    Help
+                    <div class="float-right">
+                        <i class="material-icons right" style="font-size:24px">drag_handle</i>
                     </div>
                 </div>
-                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary" disabled>Pause
-                </button>
-                <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next Step
-                </button>
-                <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary" disabled>Skip Forward
-                </button>
-                <div id="slider">
-                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50" title="Animation Speed" />
-                    <span class="highlight"></span>
-                    <output id="rangevalue">1000</output>
+                <div class="dragable_container_content" id="dragable_container_manual_content">
+                    <h4 id="search_title">Press a Search Button</h4>
+                    <p id="manual">A manual for this search will appear hear</p>
                 </div>
             </div>
-        </div>
 
-        <div id="table_container" class="container-fluid" align="center">
-            <!--This container handled in javascript-->
-        </div>
-
-        <!--Draggable DIV:-->
-        <div class="dragable_container" id="dragable_container_manual" title="Click and Drag">
-            <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-            <div class="dragable_container_header" id="dragable_container_manual_header">
-                <div id="collapse_manual" class="float-left">
-                    <i id="collapse_manual_icon" class="material-icons">expand_more</i>
+            <!--Draggable DIV:-->
+            <div class="dragable_container" id="dragable_container_step">
+                <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+                <div class="dragable_container_header" id="dragable_container_step_header" title="Click and Drag">
+                    <div id="collapse_step" class="float-left">
+                        <i id="collapse_step_icon" class="material-icons">expand_more</i>
+                    </div>
+                    <div id="collapse_step_right" class="float-left" hidden>
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                    Step by Step
+                    <div class="float-right">
+                        <i class="material-icons right" style="font-size:24px">drag_handle</i>
+                    </div>
                 </div>
-                <div id="collapse_manual_right" class="float-left" hidden>
-                    <i class="material-icons">chevron_right</i>
-                </div>
-                Help
-                <div class="float-right">
-                    <i class="material-icons right" style="font-size:24px">drag_handle</i>
-                </div>
-            </div>
-            <div class="dragable_container_content" id="dragable_container_manual_content">
-                <h4 id="search_title">Press a Search Button</h4>
-                <p id="manual">A manual for this search will appear hear</p>
-            </div>
-        </div>
-
-        <!--Draggable DIV:-->
-        <div class="dragable_container" id="dragable_container_step">
-            <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-            <div class="dragable_container_header" id="dragable_container_step_header" title="Click and Drag">
-                <div id="collapse_step" class="float-left">
-                    <i id="collapse_step_icon" class="material-icons">expand_more</i>
-                </div>
-                <div id="collapse_step_right" class="float-left" hidden>
-                    <i class="material-icons">chevron_right</i>
-                </div>
-                Step by Step
-                <div class="float-right">
-                    <i class="material-icons right" style="font-size:24px">drag_handle</i>
+                <div class="dragable_container_content" id="dragable_container_step_content">
+                    <p>You will see the steps of every search you run...</p>
                 </div>
             </div>
-            <div class="dragable_container_content" id="dragable_container_step_content">
-                <p>You will see the steps of every search you run...</p>
+
+            <div id="snackbar">This message handled in javascript</div>
+
+            <!--Footer-->
+            <div class="bg-dark navbar fixed-bottom footer">
+                <p class="m-0 text-center text-white">MIT License</p>
+                <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
             </div>
+            <!--/.footer -->
+
         </div>
+        <!-- container -->
 
-        <div id="snackbar">This message handled in javascript</div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <!--Footer-->
-        <div class="bg-dark navbar fixed-bottom footer">
-            <p class="m-0 text-center text-white">MIT License</p>
-            <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
-        </div>
-        <!--/.footer -->
-
-    </div>
-    <!-- container -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script> -->
 
-    <!--myScripts-->
-    <script type="text/javascript" src="scripts/GenerateRandomNumbers.js"></script>
-    <script type="text/javascript" src="scripts/GeneralFunctions.js"></script>
-    <script type="text/javascript" src="scripts/LinearSearch.js"></script>
-    <script type="text/javascript" src="scripts/BinarySearch.js"></script>
-    <script type="text/javascript" src="scripts/JumpSearch.js"></script>
-    <script type="text/javascript" src="scripts/InterpolationSearch.js"></script>
-    <script type="text/javascript" src="scripts/ExponentialSearch.js"></script>
-    <script type="text/javascript" src="scripts/FibonacciSearch.js"></script>
-    <script type="text/javascript" src="scripts/StepButtons.js"></script>
-    <script type="text/javascript" src="scripts/DragableContainer.js"></script>
-    <script type="text/javascript" src="scripts/Manual.js"></script>
-    <script type="text/javascript" src="scripts/Steps.js"></script>
-
+        <!--myScripts-->
+        <script type="text/javascript" src="scripts/GenerateRandomNumbers.js"></script>
+        <script type="text/javascript" src="scripts/GeneralFunctions.js"></script>
+        <script type="text/javascript" src="scripts/LinearSearch.js"></script>
+        <script type="text/javascript" src="scripts/BinarySearch.js"></script>
+        <script type="text/javascript" src="scripts/JumpSearch.js"></script>
+        <script type="text/javascript" src="scripts/InterpolationSearch.js"></script>
+        <script type="text/javascript" src="scripts/ExponentialSearch.js"></script>
+        <script type="text/javascript" src="scripts/FibonacciSearch.js"></script>
+        <script type="text/javascript" src="scripts/StepButtons.js"></script>
+        <script type="text/javascript" src="scripts/DragableContainer.js"></script>
+        <script type="text/javascript" src="scripts/Manual.js"></script>
+        <script type="text/javascript" src="scripts/Steps.js"></script>
+    </div>
 </body>
 
 </html>
