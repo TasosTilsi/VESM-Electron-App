@@ -10,11 +10,12 @@
  1. [x] ~~Some minor fixes~~  
  2. [x] ~~Open links externally in the default browser~~  
  3. [x] ~~Auto Update~~  
- 4. [ ] Publish releases for ~~Linux~~ and Mac OS  
- 5. [ ] Make a minimal menu for the app 
- 6. [ ] Materialize the view 
- 7. [ ] Anything that comes to my mind 
- 8. [ ] Feel Free to open an issue to post your thoughts
+ 4. [ ] Publish releases for ~~Linux~~, Mac OS 
+ 5. [x] ~~Dark Mode~~
+ 6. [ ] Make a minimal menu for the app 
+ 7. [ ] Materialize the view 
+ 8. [ ] Anything that comes to my mind 
+ 9. [ ] Feel Free to open an issue to post your thoughts
 
 <h3>Download the App in Development Mode</h3>
 You will have to install NodeJs first for the npm package manager.

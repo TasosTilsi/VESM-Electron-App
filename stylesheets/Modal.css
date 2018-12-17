@@ -1,16 +1,16 @@
-body {
-    padding: 0px;
-    margin: 0px;
-}
-
 .modal-header {
     background-color: green;
-    padding: 20px;
+}
+
+.modal-content{	
+    background-color: green; 
 }
 
 .modal-header img {
     box-align: center;
+    align-self: center;
     vertical-align: center;
+    border: 0rem;	
 }
 
 .modal-header p{
@@ -47,4 +47,9 @@ body {
         display: block;
         margin-left: 23%;
     }
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
 }

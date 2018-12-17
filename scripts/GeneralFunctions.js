@@ -34,10 +34,6 @@ function checkForGeneratedNumbers() {
                 } else if (searching_profile === "fibonacci") {
                     fibonacciSearch(the_array, searching_number);
                 }
-                /*else if (searching_profile === "stratos") {
-
-                           }*/
-
             } else {
                 document.getElementById("pause").click();
                 showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
@@ -102,9 +98,9 @@ function showSnackBar(message) {
 function makeTheTableWhite() {
     for (let i = 0; i < the_array.length; i++) {
         let cell = document.querySelector(`[cell_id='${i}']`).style.backgroundColor;
-        if (cell.length > 0 && cell !== "white") {
+        if (cell.length > 0 && cell !== "transparent") {
             console.log("Clearing " + i + " cell");
-            document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "transparent";
         }
     }
 }
@@ -128,15 +124,15 @@ function isNumber(n) {
 }
 
 function toggleDarkLight() {
-  let body = document.getElementById("whole_body_div");
-  let currentClass = body.className;
-  console.log("before " + currentClass);
-  body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-  console.log("after " + body.className);
+    if (document.getElementById("dark_theme").getAttribute("aria-pressed")=="true"){
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "default");
+    }else{
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+    }
 }
 
 // Add event listeners
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);
-document.getElementById("dark_theme").addEventListener("click",toggleDarkLight);
+document.getElementById("dark_theme").addEventListener("click", toggleDarkLight);
